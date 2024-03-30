@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_VER: :89-1.2
+  IMAGE_VER: 89-1.2
 
 jobs:
   build-docker-image:
