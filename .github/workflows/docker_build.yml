@@ -14,8 +14,8 @@ env:
 jobs:
   build-docker-image:
     runs-on: ubuntu-latest
-    environment:
-      name: prod
+    environment: prod
+    
     steps:
       - uses: actions/checkout@v4
         timeout-minutes: 1
@@ -28,7 +28,6 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: $USERNAME
-          #password: $TOKEN_SECRET
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and export to Docker
