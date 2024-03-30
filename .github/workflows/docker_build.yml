@@ -9,6 +9,8 @@ env:
 jobs:
   build-docker-image:
     runs-on: ubuntu-latest
+    environment:
+      name: prod
     steps:
       - uses: actions/checkout@v4
         timeout-minutes: 1
