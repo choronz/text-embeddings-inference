@@ -35,17 +35,9 @@ jobs:
           username: ${{ github.actor }} 
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
-
-      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64
           push: true
-          tags: text-embeddings-inference:89-1.2
+          tags: ghcr.io/${{ github.repository }}:89-1.2
 
